@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package gomeetfaker.examples;
+
+option go_package = "pb";
+
+import "github.com/gomeet/go-proto-gomeetfaker/gomeetfaker.proto";
+
+//option (gomeetfaker.locale) = "fr";
+
+
+message AddressBook {
+  string              uuid     = 1 [(gomeetfaker.field).uuid.version = "V4"];
+  repeated ContactNfo contacts = 2 [(gomeetfaker.field).repeated = 4];
+}
+
+message ContactNfo {
+  string           uuid        = 1 [(gomeetfaker.field).uuid.version = "V4"];
+  string           name        = 2 [(gomeetfaker.field).name.name = true];
+  repeated string  avatars_url = 3 [(gomeetfaker.field).avatar = {url: {format: "jpg", width: 300, height: 300}, repeated: 4}];
+  repeated Phone   phones      = 4 [(gomeetfaker.field).repeated = 4];
+  repeated Address addresses   = 5 [(gomeetfaker.field).repeated = 4];
+  Company          company     = 6;
+  repeated string  notes       = 7 [(gomeetfaker.field).hacker = {say_something_smart: true, repeated: 2}];
+  string           birthday    = 8 [(gomeetfaker.field).date.birthday = {min: 17, max: 99}];
+}
+
+message Phone {
+  enum PhoneType {
+    UNKNOW = 0;
+    HOME   = 1;
+    WORK   = 2;
+    OTHER  = 3;
+  }
+  string    uuid         = 1 [(gomeetfaker.field).uuid.version = "V4"];
+  PhoneType type         = 2 [(gomeetfaker.field).enum.random_no_empty = true];
+  string    phone_number = 3 [(gomeetfaker.field).phone_number.phone_number = true];
+}
+
+message Address {
+  enum AddressType {
+    UNKNOW = 0;
+    HOME   = 1;
+    WORK   = 2;
+    OTHER  = 3;
+  }
+  string      uuid              = 1 [(gomeetfaker.field).uuid.version = "V4"];
+  AddressType type              = 2 [(gomeetfaker.field).enum.random_no_empty = true];
+  string      city              = 3 [(gomeetfaker.field).address.city = true];
+  string      street_address    = 4 [(gomeetfaker.field).address.street_address = true];
+  string      postcode          = 5 [(gomeetfaker.field).address.postcode = true];
+}
+
+message Company {
+  string           uuid          = 1 [(gomeetfaker.field).uuid.version = "V4"];
+  string           name          = 2 [(gomeetfaker.field).company.name = true];
+  string           suffix        = 3 [(gomeetfaker.field).company.suffix = true];
+  string           catch_phrase  = 4 [(gomeetfaker.field).company.catch_phrase = true];
+  string           bs            = 5 [(gomeetfaker.field).company.bs = true];
+  string           ein           = 6 [(gomeetfaker.field).company.ein = true];
+  string           duns_number   = 7 [(gomeetfaker.field).company.duns_number = true];
+  string           logo          = 8 [(gomeetfaker.field).company.logo = true];
+  repeated Address addresses     = 9 [(gomeetfaker.field).repeated = 2];
+  string           note          = 10 [(gomeetfaker.field).hacker.say_something_smart = true];
+}
+

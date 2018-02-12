@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package gomeetfaker.examples;
+
+option go_package = "pb";
+
+import "github.com/gomeet/go-proto-gomeetfaker/gomeetfaker.proto";
+
+message Book {
+  string uuid   = 1 [(gomeetfaker.field).uuid.version = "V4"];
+  string author = 2 [(gomeetfaker.field).name.name = true];
+  string title  = 3 [(gomeetfaker.field).lorem.string = true];
+  string isbn10 = 4 [(gomeetfaker.field).code.isbn10 = true];
+  string isbn13 = 5 [(gomeetfaker.field).code.isbn13 = true];
+}
