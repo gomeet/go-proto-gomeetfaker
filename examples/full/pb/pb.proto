@@ -150,6 +150,39 @@ message WithoutFakerMessage {
   repeated bytes    r_bytes_value    = 31;
 }
 
+message SkipFakerMessage {
+  double   double_value               = 1 [(gomeetfaker.field).skip = true];
+  float    float_value                = 2 [(gomeetfaker.field).skip = true];
+  int32    int32_value                = 3 [(gomeetfaker.field).skip = true];
+  int64    int64_value                = 4 [(gomeetfaker.field).skip = true];
+  uint32   uint32_value               = 5 [(gomeetfaker.field).skip = true];
+  uint64   uint64_value               = 6 [(gomeetfaker.field).skip = true];
+  sint32   sint32_value               = 7 [(gomeetfaker.field).skip = true];
+  sint64   sint64_value               = 8 [(gomeetfaker.field).skip = true];
+  fixed32  fixed32_value              = 9 [(gomeetfaker.field).skip = true];
+  fixed64  fixed64_value              = 10 [(gomeetfaker.field).skip = true];
+  sfixed32 sfixed32_value             = 11 [(gomeetfaker.field).skip = true];
+  sfixed64 sfixed64_value             = 12 [(gomeetfaker.field).skip = true];
+  bool     bool_value                 = 13 [(gomeetfaker.field).skip = true];
+  string   string_value               = 14 [(gomeetfaker.field).skip = true];
+  bytes    bytes_value                = 15 [(gomeetfaker.field).skip = true];
+  repeated double   r_double_value    = 17 [(gomeetfaker.field).skip = true];
+  repeated float    r_float_value     = 18 [(gomeetfaker.field).skip = true];
+  repeated int32    r_int32_value     = 19 [(gomeetfaker.field).skip = true];
+  repeated int64    r_int64_value     = 20 [(gomeetfaker.field).skip = true];
+  repeated uint32   r_uint32_value    = 21 [(gomeetfaker.field).skip = true];
+  repeated uint64   r_uint64_value    = 22 [(gomeetfaker.field).skip = true];
+  repeated sint32   r_sint32_value    = 23 [(gomeetfaker.field).skip = true];
+  repeated sint64   r_sint64_value    = 24 [(gomeetfaker.field).skip = true];
+  repeated fixed32  r_fixed32_value   = 25 [(gomeetfaker.field).skip = true];
+  repeated fixed64  r_fixed64_value   = 26 [(gomeetfaker.field).skip = true];
+  repeated sfixed32 r_sfixed32_value  = 27 [(gomeetfaker.field).skip = true];
+  repeated sfixed64 r_sfixed64_value  = 28 [(gomeetfaker.field).skip = true];
+  repeated bool     r_bool_value      = 29 [(gomeetfaker.field).skip = true];
+  repeated string   r_string_value    = 30 [(gomeetfaker.field).skip = true];
+  repeated bytes    r_bytes_value     = 31 [(gomeetfaker.field).skip = true];
+}
+
 message ScalarRepeatedRulesOnlyMessage {
   repeated double   r_double_value   = 1 [(gomeetfaker.field).repeated = 5];
   repeated float    r_float_value    = 2 [(gomeetfaker.field).repeated = 5];

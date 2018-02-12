@@ -311,6 +311,9 @@ func (p *plugin) generateProto3FieldGomeetFaker(variableName, fieldName string, 
 	skipped = false
 	if fieldFaker != nil {
 		switch r := fieldFaker.Type.(type) {
+		case *gomeetfaker.FieldFakerRules_Skip:
+			p.P("// ", variableName, " // skipped by skip rules")
+			skipped = true
 		case *gomeetfaker.FieldFakerRules_Address:
 			p.generateAddressRules(variableName, r, field, fieldName)
 		case *gomeetfaker.FieldFakerRules_App:

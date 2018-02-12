@@ -11,6 +11,7 @@ It has these top-level messages:
 	EnumMessage
 	ComplexMessage
 	WithoutFakerMessage
+	SkipFakerMessage
 	ScalarRepeatedRulesOnlyMessage
 	ValueMessage
 	UuidMessage
@@ -69,62 +70,62 @@ func init() {
 
 func GomeetFakerSetLocale(l string) {
 	switch l {
-	case "en-nep":
-		faker.Locale = locales.En_NEP
-	case "en-us":
-		faker.Locale = locales.En_US
-	case "fr":
-		faker.Locale = locales.Fr
-	case "vi":
-		faker.Locale = locales.Vi
 	case "de-at":
 		faker.Locale = locales.De_AT
 	case "de":
 		faker.Locale = locales.De
-	case "en-ind":
-		faker.Locale = locales.En_IND
-	case "nl":
-		faker.Locale = locales.Nl
-	case "sv":
-		faker.Locale = locales.Sv
+	case "en-nep":
+		faker.Locale = locales.En_NEP
+	case "fr":
+		faker.Locale = locales.Fr
+	case "pl":
+		faker.Locale = locales.Pl
 	case "en-au":
 		faker.Locale = locales.En_AU
+	case "ru":
+		faker.Locale = locales.Ru
+	case "zh-tw":
+		faker.Locale = locales.Zh_TW
+	case "en-us":
+		faker.Locale = locales.En_US
 	case "en-au-ocker":
 		faker.Locale = locales.En_AU_OCKER
-	case "sk":
-		faker.Locale = locales.Sk
+	case "es":
+		faker.Locale = locales.Es
+	case "en-gb":
+		faker.Locale = locales.En_GB
+	case "ko":
+		faker.Locale = locales.Ko
+	case "ja":
+		faker.Locale = locales.Ja
+	case "zh-cn":
+		faker.Locale = locales.Zh_CN
+	case "en":
+		faker.Locale = locales.En
+	case "fa":
+		faker.Locale = locales.Fa
+	case "it":
+		faker.Locale = locales.It
+	case "nl":
+		faker.Locale = locales.Nl
+	case "pt-br":
+		faker.Locale = locales.Pt_BR
+	case "de-ch":
+		faker.Locale = locales.De_CH
 	case "en-bork":
 		faker.Locale = locales.En_BORK
 	case "en-ca":
 		faker.Locale = locales.En_CA
-	case "en-gb":
-		faker.Locale = locales.En_GB
-	case "en":
-		faker.Locale = locales.En
-	case "ja":
-		faker.Locale = locales.Ja
-	case "zh-tw":
-		faker.Locale = locales.Zh_TW
-	case "de-ch":
-		faker.Locale = locales.De_CH
-	case "es":
-		faker.Locale = locales.Es
-	case "it":
-		faker.Locale = locales.It
-	case "zh-cn":
-		faker.Locale = locales.Zh_CN
+	case "en-ind":
+		faker.Locale = locales.En_IND
 	case "nb-no":
 		faker.Locale = locales.Nb_NO
-	case "pl":
-		faker.Locale = locales.Pl
-	case "pt-br":
-		faker.Locale = locales.Pt_BR
-	case "fa":
-		faker.Locale = locales.Fa
-	case "ko":
-		faker.Locale = locales.Ko
-	case "ru":
-		faker.Locale = locales.Ru
+	case "sk":
+		faker.Locale = locales.Sk
+	case "sv":
+		faker.Locale = locales.Sv
+	case "vi":
+		faker.Locale = locales.Vi
 	default:
 		faker.Locale = locales.En
 	}
@@ -557,6 +558,41 @@ func NewWithoutFakerMessageGomeetFaker() *WithoutFakerMessage {
 		aCurrentRBytesValue := []byte(faker.Lorem().String())
 		this.RBytesValue = append(this.RBytesValue, aCurrentRBytesValue)
 	}
+	return this
+}
+
+func NewSkipFakerMessageGomeetFaker() *SkipFakerMessage {
+	this := &SkipFakerMessage{}
+	// this.DoubleValue // skipped by skip rules
+	// this.FloatValue // skipped by skip rules
+	// this.Int32Value // skipped by skip rules
+	// this.Int64Value // skipped by skip rules
+	// this.Uint32Value // skipped by skip rules
+	// this.Uint64Value // skipped by skip rules
+	// this.Sint32Value // skipped by skip rules
+	// this.Sint64Value // skipped by skip rules
+	// this.Fixed32Value // skipped by skip rules
+	// this.Fixed64Value // skipped by skip rules
+	// this.Sfixed32Value // skipped by skip rules
+	// this.Sfixed64Value // skipped by skip rules
+	// this.BoolValue // skipped by skip rules
+	// this.StringValue // skipped by skip rules
+	// this.BytesValue // skipped by skip rules
+	// this.RDoubleValue // skipped by skip rules
+	// this.RFloatValue // skipped by skip rules
+	// this.RInt32Value // skipped by skip rules
+	// this.RInt64Value // skipped by skip rules
+	// this.RUint32Value // skipped by skip rules
+	// this.RUint64Value // skipped by skip rules
+	// this.RSint32Value // skipped by skip rules
+	// this.RSint64Value // skipped by skip rules
+	// this.RFixed32Value // skipped by skip rules
+	// this.RFixed64Value // skipped by skip rules
+	// this.RSfixed32Value // skipped by skip rules
+	// this.RSfixed64Value // skipped by skip rules
+	// this.RBoolValue // skipped by skip rules
+	// this.RStringValue // skipped by skip rules
+	// this.RBytesValue // skipped by skip rules
 	return this
 }
 

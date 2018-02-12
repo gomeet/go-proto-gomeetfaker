@@ -13,6 +13,7 @@ var (
 	locale     string
 	msgPrintFn = map[string]func(){
 		"without_faker":              printWithoutFakerMessageGomeetFaker,
+		"skip_faker":                 printSkipFakerMessageGomeetFaker,
 		"value":                      printValueMessageGomeetFaker,
 		"uuid":                       printUuidMessageGomeetFaker,
 		"address":                    printAddressMessageGomeetFaker,
@@ -91,6 +92,12 @@ func printComplexMessageGomeetFaker() {
 	aComplexMessage := pb.NewComplexMessageGomeetFaker()
 	fmt.Println("ComplexMessage gomeetfaker : ")
 	fmt.Println(aComplexMessage)
+	fmt.Println("")
+}
+func printSkipFakerMessageGomeetFaker() {
+	aSkipFakerMessage := pb.NewSkipFakerMessageGomeetFaker()
+	fmt.Println("SkipFakerMessage gomeetfaker : ")
+	fmt.Println(aSkipFakerMessage)
 	fmt.Println("")
 }
 func printWithoutFakerMessageGomeetFaker() {

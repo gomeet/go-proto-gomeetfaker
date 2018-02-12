@@ -38,6 +38,7 @@ message FieldFakerRules {
     TeamRules        team         = 20;
     TimeRules        time         = 21;
     uint32           repeated     = 22;
+    bool             skip         = 23;
   }
 }
 
