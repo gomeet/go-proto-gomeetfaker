@@ -26,7 +26,7 @@ message Book {
 }
 ```
 
-The generated code is understandable and has clear understandable error messages. Take a look:
+The generated code is understandable. Take a look:
 
 ```go
 func NewBookGomeetFaker() *Book {
