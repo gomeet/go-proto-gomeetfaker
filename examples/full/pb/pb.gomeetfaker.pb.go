@@ -70,62 +70,62 @@ func init() {
 
 func GomeetFakerSetLocale(l string) {
 	switch l {
-	case "fr":
-		faker.Locale = locales.Fr
-	case "ru":
-		faker.Locale = locales.Ru
-	case "ko":
-		faker.Locale = locales.Ko
-	case "zh-tw":
-		faker.Locale = locales.Zh_TW
-	case "de-ch":
-		faker.Locale = locales.De_CH
-	case "en":
-		faker.Locale = locales.En
-	case "en-ca":
-		faker.Locale = locales.En_CA
-	case "en-au-ocker":
-		faker.Locale = locales.En_AU_OCKER
-	case "es":
-		faker.Locale = locales.Es
-	case "de-at":
-		faker.Locale = locales.De_AT
-	case "en-bork":
-		faker.Locale = locales.En_BORK
-	case "sv":
-		faker.Locale = locales.Sv
-	case "en-au":
-		faker.Locale = locales.En_AU
-	case "pt-br":
-		faker.Locale = locales.Pt_BR
-	case "vi":
-		faker.Locale = locales.Vi
-	case "zh-cn":
-		faker.Locale = locales.Zh_CN
-	case "en-nep":
-		faker.Locale = locales.En_NEP
-	case "fa":
-		faker.Locale = locales.Fa
 	case "en-gb":
 		faker.Locale = locales.En_GB
-	case "it":
-		faker.Locale = locales.It
-	case "nb-no":
-		faker.Locale = locales.Nb_NO
+	case "en-au-ocker":
+		faker.Locale = locales.En_AU_OCKER
+	case "fr":
+		faker.Locale = locales.Fr
 	case "nl":
 		faker.Locale = locales.Nl
-	case "en-us":
-		faker.Locale = locales.En_US
-	case "ja":
-		faker.Locale = locales.Ja
-	case "pl":
-		faker.Locale = locales.Pl
-	case "sk":
-		faker.Locale = locales.Sk
+	case "en-nep":
+		faker.Locale = locales.En_NEP
 	case "de":
 		faker.Locale = locales.De
 	case "en-ind":
 		faker.Locale = locales.En_IND
+	case "es":
+		faker.Locale = locales.Es
+	case "pt-br":
+		faker.Locale = locales.Pt_BR
+	case "fa":
+		faker.Locale = locales.Fa
+	case "it":
+		faker.Locale = locales.It
+	case "de-at":
+		faker.Locale = locales.De_AT
+	case "en-au":
+		faker.Locale = locales.En_AU
+	case "sv":
+		faker.Locale = locales.Sv
+	case "vi":
+		faker.Locale = locales.Vi
+	case "sk":
+		faker.Locale = locales.Sk
+	case "de-ch":
+		faker.Locale = locales.De_CH
+	case "en-us":
+		faker.Locale = locales.En_US
+	case "en":
+		faker.Locale = locales.En
+	case "ja":
+		faker.Locale = locales.Ja
+	case "ko":
+		faker.Locale = locales.Ko
+	case "nb-no":
+		faker.Locale = locales.Nb_NO
+	case "pl":
+		faker.Locale = locales.Pl
+	case "zh-cn":
+		faker.Locale = locales.Zh_CN
+	case "en-bork":
+		faker.Locale = locales.En_BORK
+	case "en-ca":
+		faker.Locale = locales.En_CA
+	case "ru":
+		faker.Locale = locales.Ru
+	case "zh-tw":
+		faker.Locale = locales.Zh_TW
 	default:
 		faker.Locale = locales.En
 	}
@@ -2067,8 +2067,8 @@ func NewDateMessageGomeetFaker() *DateMessage {
 	}
 	this.StringNow = time.Now().Format("2006-01-02 15:04:05")
 	this.BytesNow = []byte(time.Now().Format("2006-01-02 15:04:05"))
-	this.FStringNow = time.Now().Format("2006-01-02")
-	this.FBytesNow = []byte(time.Now().Format("2006-01-02"))
+	this.FStringNow = time.Now().Format("2006-01-02T15:04:05Z07:00")
+	this.FBytesNow = []byte(time.Now().Format("2006-01-02T15:04:05Z07:00"))
 	for i := 0; i < 3; i++ {
 		if t, err := ptypes.TimestampProto(time.Now()); err == nil {
 			this.RNow = append(this.RNow, t)
@@ -2081,10 +2081,10 @@ func NewDateMessageGomeetFaker() *DateMessage {
 		this.RBytesNow = append(this.RBytesNow, []byte(time.Now().Format("2006-01-02 15:04:05")))
 	}
 	for i := 0; i < 3; i++ {
-		this.RFStringNow = append(this.RFStringNow, time.Now().Format("2006-01-02"))
+		this.RFStringNow = append(this.RFStringNow, time.Now().Format("2006-01-02T15:04:05Z07:00"))
 	}
 	for i := 0; i < 3; i++ {
-		this.RFBytesNow = append(this.RFBytesNow, []byte(time.Now().Format("2006-01-02")))
+		this.RFBytesNow = append(this.RFBytesNow, []byte(time.Now().Format("2006-01-02T15:04:05Z07:00")))
 	}
 	for i := 0; i < 5; i++ {
 		if t, err := ptypes.TimestampProto(time.Now()); err == nil {
@@ -2098,10 +2098,10 @@ func NewDateMessageGomeetFaker() *DateMessage {
 		this.R2BytesNow = append(this.R2BytesNow, []byte(time.Now().Format("2006-01-02 15:04:05")))
 	}
 	for i := 0; i < 5; i++ {
-		this.R2FStringNow = append(this.R2FStringNow, time.Now().Format("2006-01-02"))
+		this.R2FStringNow = append(this.R2FStringNow, time.Now().Format("2006-01-02T15:04:05Z07:00"))
 	}
 	for i := 0; i < 5; i++ {
-		this.R2FBytesNow = append(this.R2FBytesNow, []byte(time.Now().Format("2006-01-02")))
+		this.R2FBytesNow = append(this.R2FBytesNow, []byte(time.Now().Format("2006-01-02T15:04:05Z07:00")))
 	}
 	return this
 }
@@ -4232,6 +4232,47 @@ func NewTimeMessageGomeetFaker() *TimeMessage {
 	for i := 0; i < 5; i++ {
 		aR2FStringBirthdayTime := faker.Time().Birthday(17, 99)
 		this.R2FStringBirthday = append(this.R2FStringBirthday, aR2FStringBirthdayTime.Format("2006-01-02"))
+	}
+	if t, err := ptypes.TimestampProto(time.Now()); err == nil {
+		this.Now = t
+	}
+	this.StringNow = time.Now().Format("2006-01-02 15:04:05")
+	this.BytesNow = []byte(time.Now().Format("2006-01-02 15:04:05"))
+	this.FStringNow = time.Now().Format("15:04:05Z07:00")
+	this.FBytesNow = []byte(time.Now().Format("15:04:05Z07:00"))
+	for i := 0; i < 3; i++ {
+		if t, err := ptypes.TimestampProto(time.Now()); err == nil {
+			this.RNow = append(this.RNow, t)
+		}
+	}
+	for i := 0; i < 3; i++ {
+		this.RStringNow = append(this.RStringNow, time.Now().Format("2006-01-02 15:04:05"))
+	}
+	for i := 0; i < 3; i++ {
+		this.RBytesNow = append(this.RBytesNow, []byte(time.Now().Format("2006-01-02 15:04:05")))
+	}
+	for i := 0; i < 3; i++ {
+		this.RFStringNow = append(this.RFStringNow, time.Now().Format("15:04:05Z07:00"))
+	}
+	for i := 0; i < 3; i++ {
+		this.RFBytesNow = append(this.RFBytesNow, []byte(time.Now().Format("15:04:05Z07:00")))
+	}
+	for i := 0; i < 5; i++ {
+		if t, err := ptypes.TimestampProto(time.Now()); err == nil {
+			this.R2Now = append(this.R2Now, t)
+		}
+	}
+	for i := 0; i < 5; i++ {
+		this.R2StringNow = append(this.R2StringNow, time.Now().Format("2006-01-02 15:04:05"))
+	}
+	for i := 0; i < 5; i++ {
+		this.R2BytesNow = append(this.R2BytesNow, []byte(time.Now().Format("2006-01-02 15:04:05")))
+	}
+	for i := 0; i < 5; i++ {
+		this.R2FStringNow = append(this.R2FStringNow, time.Now().Format("15:04:05Z07:00"))
+	}
+	for i := 0; i < 5; i++ {
+		this.R2FBytesNow = append(this.R2FBytesNow, []byte(time.Now().Format("15:04:05Z07:00")))
 	}
 	return this
 }

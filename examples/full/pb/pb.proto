@@ -659,18 +659,18 @@ message DateMessage {
   google.protobuf.Timestamp          now                   = 81 [(gomeetfaker.field).date.now = true];
   string                             string_now            = 82 [(gomeetfaker.field).date.now = true];
   bytes                              bytes_now             = 83 [(gomeetfaker.field).date.now = true];
-  string                             f_string_now          = 84 [(gomeetfaker.field).date = {now: true, format: "2006-01-02"}];
-  bytes                              f_bytes_now           = 85 [(gomeetfaker.field).date = {now: true, format: "2006-01-02"}];
+  string                             f_string_now          = 84 [(gomeetfaker.field).date = {now: true, format: "2006-01-02T15:04:05Z07:00"}];
+  bytes                              f_bytes_now           = 85 [(gomeetfaker.field).date = {now: true, format: "2006-01-02T15:04:05Z07:00"}];
   repeated google.protobuf.Timestamp r_now                 = 86 [(gomeetfaker.field).date.now = true];
   repeated string                    r_string_now          = 87 [(gomeetfaker.field).date.now = true];
   repeated bytes                     r_bytes_now           = 88 [(gomeetfaker.field).date.now = true];
-  repeated string                    r_f_string_now        = 89 [(gomeetfaker.field).date = {now: true, format: "2006-01-02"}];
-  repeated bytes                     r_f_bytes_now         = 90 [(gomeetfaker.field).date = {now: true, format: "2006-01-02"}];
+  repeated string                    r_f_string_now        = 89 [(gomeetfaker.field).date = {now: true, format: "2006-01-02T15:04:05Z07:00"}];
+  repeated bytes                     r_f_bytes_now         = 90 [(gomeetfaker.field).date = {now: true, format: "2006-01-02T15:04:05Z07:00"}];
   repeated google.protobuf.Timestamp r2_now                = 91 [(gomeetfaker.field).date = {now: true, repeated: 5}];
   repeated string                    r2_string_now         = 92 [(gomeetfaker.field).date = {now: true, repeated: 5}];
   repeated bytes                     r2_bytes_now          = 93 [(gomeetfaker.field).date = {now: true, repeated: 5}];
-  repeated string                    r2_f_string_now       = 94 [(gomeetfaker.field).date = {now: true, format: "2006-01-02", repeated: 5}];
-  repeated bytes                     r2_f_bytes_now        = 95 [(gomeetfaker.field).date = {now: true, format: "2006-01-02", repeated: 5}];
+  repeated string                    r2_f_string_now       = 94 [(gomeetfaker.field).date = {now: true, format: "2006-01-02T15:04:05Z07:00", repeated: 5}];
+  repeated bytes                     r2_f_bytes_now        = 95 [(gomeetfaker.field).date = {now: true, format: "2006-01-02T15:04:05Z07:00", repeated: 5}];
 }
 
 message FinanceMessage {
@@ -1332,6 +1332,21 @@ message TimeMessage {
   repeated string                    r2_f_string_backward  = 75 [(gomeetfaker.field).time = {backward: "240h", format: "2006-01-02", repeated: 5}];
   repeated string                    r2_f_string_birthday  = 76 [(gomeetfaker.field).time = {birthday: {min: 17, max: 99}, format: "2006-01-02", repeated: 5}];
   //repeated bytes ...
+  google.protobuf.Timestamp          now                   = 77 [(gomeetfaker.field).time.now = true];
+  string                             string_now            = 78 [(gomeetfaker.field).time.now = true];
+  bytes                              bytes_now             = 79 [(gomeetfaker.field).time.now = true];
+  string                             f_string_now          = 80 [(gomeetfaker.field).time = {now: true, format: "15:04:05Z07:00"}];
+  bytes                              f_bytes_now           = 81 [(gomeetfaker.field).time = {now: true, format: "15:04:05Z07:00"}];
+  repeated google.protobuf.Timestamp r_now                 = 82 [(gomeetfaker.field).time.now = true];
+  repeated string                    r_string_now          = 83 [(gomeetfaker.field).time.now = true];
+  repeated bytes                     r_bytes_now           = 84 [(gomeetfaker.field).time.now = true];
+  repeated string                    r_f_string_now        = 85 [(gomeetfaker.field).time = {now: true, format: "15:04:05Z07:00"}];
+  repeated bytes                     r_f_bytes_now         = 86 [(gomeetfaker.field).time = {now: true, format: "15:04:05Z07:00"}];
+  repeated google.protobuf.Timestamp r2_now                = 87 [(gomeetfaker.field).time = {now: true, repeated: 5}];
+  repeated string                    r2_string_now         = 88 [(gomeetfaker.field).time = {now: true, repeated: 5}];
+  repeated bytes                     r2_bytes_now          = 89 [(gomeetfaker.field).time = {now: true, repeated: 5}];
+  repeated string                    r2_f_string_now       = 90 [(gomeetfaker.field).time = {now: true, format: "15:04:05Z07:00", repeated: 5}];
+  repeated bytes                     r2_f_bytes_now        = 91 [(gomeetfaker.field).time = {now: true, format: "15:04:05Z07:00", repeated: 5}];
 }
 
 message EmbedAllFakerMessage {
