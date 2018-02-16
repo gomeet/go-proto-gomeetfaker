@@ -70,62 +70,62 @@ func init() {
 
 func GomeetFakerSetLocale(l string) {
 	switch l {
-	case "de-at":
-		faker.Locale = locales.De_AT
-	case "de":
-		faker.Locale = locales.De
-	case "en-nep":
-		faker.Locale = locales.En_NEP
 	case "fr":
 		faker.Locale = locales.Fr
-	case "pl":
-		faker.Locale = locales.Pl
-	case "en-au":
-		faker.Locale = locales.En_AU
 	case "ru":
 		faker.Locale = locales.Ru
+	case "ko":
+		faker.Locale = locales.Ko
 	case "zh-tw":
 		faker.Locale = locales.Zh_TW
-	case "en-us":
-		faker.Locale = locales.En_US
+	case "de-ch":
+		faker.Locale = locales.De_CH
+	case "en":
+		faker.Locale = locales.En
+	case "en-ca":
+		faker.Locale = locales.En_CA
 	case "en-au-ocker":
 		faker.Locale = locales.En_AU_OCKER
 	case "es":
 		faker.Locale = locales.Es
-	case "en-gb":
-		faker.Locale = locales.En_GB
-	case "ko":
-		faker.Locale = locales.Ko
-	case "ja":
-		faker.Locale = locales.Ja
-	case "zh-cn":
-		faker.Locale = locales.Zh_CN
-	case "en":
-		faker.Locale = locales.En
-	case "fa":
-		faker.Locale = locales.Fa
-	case "it":
-		faker.Locale = locales.It
-	case "nl":
-		faker.Locale = locales.Nl
-	case "pt-br":
-		faker.Locale = locales.Pt_BR
-	case "de-ch":
-		faker.Locale = locales.De_CH
+	case "de-at":
+		faker.Locale = locales.De_AT
 	case "en-bork":
 		faker.Locale = locales.En_BORK
-	case "en-ca":
-		faker.Locale = locales.En_CA
-	case "en-ind":
-		faker.Locale = locales.En_IND
-	case "nb-no":
-		faker.Locale = locales.Nb_NO
-	case "sk":
-		faker.Locale = locales.Sk
 	case "sv":
 		faker.Locale = locales.Sv
+	case "en-au":
+		faker.Locale = locales.En_AU
+	case "pt-br":
+		faker.Locale = locales.Pt_BR
 	case "vi":
 		faker.Locale = locales.Vi
+	case "zh-cn":
+		faker.Locale = locales.Zh_CN
+	case "en-nep":
+		faker.Locale = locales.En_NEP
+	case "fa":
+		faker.Locale = locales.Fa
+	case "en-gb":
+		faker.Locale = locales.En_GB
+	case "it":
+		faker.Locale = locales.It
+	case "nb-no":
+		faker.Locale = locales.Nb_NO
+	case "nl":
+		faker.Locale = locales.Nl
+	case "en-us":
+		faker.Locale = locales.En_US
+	case "ja":
+		faker.Locale = locales.Ja
+	case "pl":
+		faker.Locale = locales.Pl
+	case "sk":
+		faker.Locale = locales.Sk
+	case "de":
+		faker.Locale = locales.De
+	case "en-ind":
+		faker.Locale = locales.En_IND
 	default:
 		faker.Locale = locales.En
 	}
@@ -2061,6 +2061,47 @@ func NewDateMessageGomeetFaker() *DateMessage {
 	for i := 0; i < 5; i++ {
 		aR2FStringBirthdayDate := faker.Date().Birthday(17, 99)
 		this.R2FStringBirthday = append(this.R2FStringBirthday, aR2FStringBirthdayDate.Format("2006-01-02"))
+	}
+	if t, err := ptypes.TimestampProto(time.Now()); err == nil {
+		this.Now = t
+	}
+	this.StringNow = time.Now().Format("2006-01-02 15:04:05")
+	this.BytesNow = []byte(time.Now().Format("2006-01-02 15:04:05"))
+	this.FStringNow = time.Now().Format("2006-01-02")
+	this.FBytesNow = []byte(time.Now().Format("2006-01-02"))
+	for i := 0; i < 3; i++ {
+		if t, err := ptypes.TimestampProto(time.Now()); err == nil {
+			this.RNow = append(this.RNow, t)
+		}
+	}
+	for i := 0; i < 3; i++ {
+		this.RStringNow = append(this.RStringNow, time.Now().Format("2006-01-02 15:04:05"))
+	}
+	for i := 0; i < 3; i++ {
+		this.RBytesNow = append(this.RBytesNow, []byte(time.Now().Format("2006-01-02 15:04:05")))
+	}
+	for i := 0; i < 3; i++ {
+		this.RFStringNow = append(this.RFStringNow, time.Now().Format("2006-01-02"))
+	}
+	for i := 0; i < 3; i++ {
+		this.RFBytesNow = append(this.RFBytesNow, []byte(time.Now().Format("2006-01-02")))
+	}
+	for i := 0; i < 5; i++ {
+		if t, err := ptypes.TimestampProto(time.Now()); err == nil {
+			this.R2Now = append(this.R2Now, t)
+		}
+	}
+	for i := 0; i < 5; i++ {
+		this.R2StringNow = append(this.R2StringNow, time.Now().Format("2006-01-02 15:04:05"))
+	}
+	for i := 0; i < 5; i++ {
+		this.R2BytesNow = append(this.R2BytesNow, []byte(time.Now().Format("2006-01-02 15:04:05")))
+	}
+	for i := 0; i < 5; i++ {
+		this.R2FStringNow = append(this.R2FStringNow, time.Now().Format("2006-01-02"))
+	}
+	for i := 0; i < 5; i++ {
+		this.R2FBytesNow = append(this.R2FBytesNow, []byte(time.Now().Format("2006-01-02")))
 	}
 	return this
 }
