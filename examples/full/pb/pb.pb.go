@@ -765,9 +765,7 @@ func (m *ComplexMessage) String() string            { return proto.CompactTextSt
 func (*ComplexMessage) ProtoMessage()               {}
 func (*ComplexMessage) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
 
-type isComplexMessage_AddressInfo interface {
-	isComplexMessage_AddressInfo()
-}
+type isComplexMessage_AddressInfo interface{ isComplexMessage_AddressInfo() }
 
 type ComplexMessage_City struct {
 	City string `protobuf:"bytes,1,opt,name=city,oneof"`
@@ -10486,9 +10484,7 @@ func (m *EmbedOneOfFakerMessage) String() string            { return proto.Compa
 func (*EmbedOneOfFakerMessage) ProtoMessage()               {}
 func (*EmbedOneOfFakerMessage) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{26} }
 
-type isEmbedOneOfFakerMessage_Message interface {
-	isEmbedOneOfFakerMessage_Message()
-}
+type isEmbedOneOfFakerMessage_Message interface{ isEmbedOneOfFakerMessage_Message() }
 
 type EmbedOneOfFakerMessage_WithoutFaker struct {
 	WithoutFaker *WithoutFakerMessage `protobuf:"bytes,1,opt,name=without_faker,json=withoutFaker,oneof"`
