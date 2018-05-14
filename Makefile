@@ -144,3 +144,7 @@ tools-upgrade: tools
 dep: tools
 	_tools/bin/dep ensure
 
+.PHONY: dep-prune
+dep-prune: tools
+	_tools/bin/dep prune
+
