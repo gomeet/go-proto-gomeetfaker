@@ -52,8 +52,8 @@ func (p *plugin) Generate(file *generator.FileDescriptor) {
 	}
 	p.PluginImports = generator.NewPluginImports(p.Generator)
 	//p.gomeetfakerPkg = p.NewImport("github.com/gomeet/go-proto-gomeetfaker")
-	p.fakerPkg = p.NewImport("github.com/dmgk/faker")
-	p.fakerLocalesPkg = p.NewImport("github.com/dmgk/faker/locales")
+	p.fakerPkg = p.NewImport("github.com/gomeet/faker")
+	p.fakerLocalesPkg = p.NewImport("github.com/gomeet/faker/locales")
 	p.randPkg = p.NewImport("math/rand")
 	p.fmtPkg = p.NewImport("fmt")
 	p.stringsPkg = p.NewImport("strings")

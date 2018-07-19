@@ -119,4 +119,4 @@ Basically the magical incantation (apart from includes) is the `--gomeetfaker_ou
 - [ ] proto2 support
 - [ ] tests
 - [ ] more examples
-- [ ] remove [github.com/dmgk/faker](https://github.com/dmgk/faker) depency
+- [x] remove [github.com/dmgk/faker](https://github.com/dmgk/faker) depency. (Now it's [github.com/gomeet/faker](https://github.com/gomeet/faker))

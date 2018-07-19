@@ -3,7 +3,7 @@
 
 [[projects]]
   branch = "master"
-  name = "github.com/dmgk/faker"
+  name = "github.com/gomeet/faker"
   packages = [".","locales"]
   revision = "854b4c67597c9b22b92860db2650cad35d337269"
 

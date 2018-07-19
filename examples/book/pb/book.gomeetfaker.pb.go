@@ -12,8 +12,8 @@ It has these top-level messages:
 */
 package pb
 
-import faker "github.com/dmgk/faker"
-import locales "github.com/dmgk/faker/locales"
+import faker "github.com/gomeet/faker"
+import locales "github.com/gomeet/faker/locales"
 import rand "math/rand"
 import time "time"
 import uuid "github.com/google/uuid"

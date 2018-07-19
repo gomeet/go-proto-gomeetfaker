@@ -2,7 +2,6 @@ syntax = "proto2";
 package gomeetfaker;
 
 import "google/protobuf/descriptor.proto";
-import "google/protobuf/timestamp.proto";
 
 option go_package = "gomeetfaker";
 
