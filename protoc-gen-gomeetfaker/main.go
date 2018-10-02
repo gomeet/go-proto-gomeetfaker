@@ -1,4 +1,4 @@
-// Copyright 2016 Michal Witkowski. All Rights Reserved.
+// Copyright 2018 Hugues Dubois. All Rights Reserved.
 // See LICENSE for licensing terms.
 
 package main
